@@ -1,0 +1,19 @@
+<div class="container-title">
+  <h1>Ajoutez la voiture que vous souhaitez</h1>
+</div>
+
+<form (ngSubmit)="addCar()" class="p-4 border shadow-md">
+  <div class="mb-4">
+    <label>Marque</label>
+    <input [(ngModel)]="newCar.marque" name="marque" class="border p-2 w-full" required>
+  </div>
+  <div class="mb-4">
+    <label>Modèle</label>
+    <input [(ngModel)]="newCar.modele" name="modele" class="border p-2 w-full" required>
+  </div>
+  <div class="mb-4">
+    <label>Détails</label>
+    <textarea [(ngModel)]="newCar.details" name="details" class="border p-2 w-full"></textarea>
+  </div>
+  <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Ajouter</button>
+</form>

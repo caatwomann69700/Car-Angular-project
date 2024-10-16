@@ -1,0 +1,54 @@
+<!-- Header avec un logo et un titre -->
+ 
+<header>
+  <div class="container">
+  <img src="assets/images/vecteezy_car-logo-png_25174498.png" alt="Logo">
+  <h1>Gestion des Voitures</h1>
+</div>
+</header>
+
+<!-- Conteneur principal -->
+<div class="container mx-auto flex justify-center items-center mt-4">
+  <!-- Conteneur flex pour aligner la barre de recherche et le bouton -->
+  <div class="flex space-x-4">
+    <!-- Barre de recherche -->
+    <input 
+      type="text" 
+      placeholder="Rechercher par marque ou modèle"
+      [(ngModel)]="searchText"
+      (input)="filterCars()"
+      class="p-2 border rounded-md w-80"
+    >
+    <!-- Bouton Ajouter -->
+    <button (click)="goToAddPage()" class="bg-blue-500 text-white px-4 py-2 rounded">Ajouter</button>
+  </div>
+</div>
+
+<!-- Tableau des voitures -->
+<div class="container mx-auto flex justify-center items-center mt-4">
+  <table class="table-auto w-full mt-4">
+    <thead>
+      <tr>
+        <th class="px-4 py-2">ID</th>
+        <th class="px-4 py-2">Marque</th>
+        <th class="px-4 py-2">Modèle</th>
+        <th class="px-4 py-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of filteredCars">
+        <td class="border px-4 py-2">{{ car.id }}</td>
+        <td class="border px-4 py-2">{{ car.marque }}</td>
+        <td class="border px-4 py-2">{{ car.modele }}</td>
+        <td class="border px-4 py-2">
+          <button (click)="selectCar(car)" class="bg-blue-500 text-white px-4 py-2 rounded">Détails</button>
+          <button (click)="deleteCar(car.id)" class="bg-red-500 text-white px-4 py-2 rounded ml-2">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
+</div>
+
+<!-- Afficher les détails de la voiture sélectionnée -->
+<app-car-details *ngIf="selectedCar" [car]="selectedCar"></app-car-details>

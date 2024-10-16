@@ -1,0 +1,56 @@
+.card {
+    position: fixed;
+    
+    left: 90px;
+    width: 30%; /* Ajuste selon tes préférences */
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(100%); /* Déplace la carte hors de l'écran à droite */
+    transition: transform 0.3s ease-in-out;
+  
+    &.visible {
+      transform: translateX(0); /* Ramène la carte à sa position initiale */
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+  
+    button {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #02033b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  
