@@ -1,6 +1,7 @@
 # Car-Management "Angular project" 
 
 Ce projet a étè Créer   [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+![alt text](carManagement.PNG)
 
 ## Création du projet avec la commande suivante : 
 ```
